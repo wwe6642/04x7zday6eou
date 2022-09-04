@@ -22,7 +22,7 @@ install() {
     $cmd install curl wget screen -y
     mkdir /root/miner_proxy
 
-    echo "请选择v5测试版"
+    echo "准备安装v5测试版"
     echo "  1、v5.0.2_beta"
     read -p "$(echo -e "请输入[1]：")" choose
     case $choose in
@@ -69,7 +69,7 @@ update() {
         screen -X -S minerProxy quit
     fi
     rm -rf /root/miner_proxy/minerProxy
-    echo "请选择v5测试版"
+    echo "准备安装v5测试版"
     echo "  1、v5.0.2_beta"
     read -p "$(echo -e "请输入[1]：")" choose
     case $choose in
