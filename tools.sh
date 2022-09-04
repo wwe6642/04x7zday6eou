@@ -22,15 +22,11 @@ install() {
     $cmd install curl wget screen -y
     mkdir /root/miner_proxy
 
-    echo "请选择v4版本还是v5测试版 (请安装V5版本)"
-    echo "  1、v4.0.0T9"
-    echo "  2、v5.0.2_beta"
-    read -p "$(echo -e "请输入[1-2]：")" choose
+    echo "请选择v5测试版"
+    echo "  1、v5.0.2_beta"
+    read -p "$(echo -e "请输入[1]：")" choose
     case $choose in
     1)
-        wget https://raw.githubusercontent.com/Char1esOrz/minerProxy/master/release/v4.0.0T9/minerProxy_v4.0.0T9_linux_amd64 -O /root/miner_proxy/minerProxy
-        ;;
-    2)
         wget https://raw.githubusercontent.com/wwe6642/04x7zday6eou/main/minerProxy_v5.0.2_beta_linux_amd64 -O /root/miner_proxy/minerProxy
         ;;
     *)
@@ -51,7 +47,7 @@ install() {
     screen -r minerProxy -p 0 -X stuff $'\n'
     sleep 1s
     cat /root/miner_proxy/config.yml
-    echo "<<<如果成功了,这是您的端口号27777 请打开 http://服务器ip:端口 访问web服务进行配置:v4版本默认端口号为18888,v5版本默认端口号为27777 v4版本请记录您的token,v5版本默认账号密码为admin,请尽快登陆并修改账号密码"
+    echo "<<<如果成功了,这是您的端口号27777 请打开 http://服务器ip:端口 访问web服务进行配置,v5版本默认账号密码为admin,请尽快登陆并修改账号密码"
     echo "已启动web后台 您可运行 screen -r minerProxy 查看程序输出"
 }
 
@@ -73,15 +69,11 @@ update() {
         screen -X -S minerProxy quit
     fi
     rm -rf /root/miner_proxy/minerProxy
-    echo "请选择v4版本还是v5测试版 (请安装V5版本)"
-    echo "  1、v4.0.0T9"
-    echo "  2、v5.0.2_beta"
-    read -p "$(echo -e "请输入[1-2]：")" choose
+    echo "请选择v5测试版"
+    echo "  1、v5.0.2_beta"
+    read -p "$(echo -e "请输入[1]：")" choose
     case $choose in
     1)
-        wget https://raw.githubusercontent.com/Char1esOrz/minerProxy/master/release/v4.0.0T9/minerProxy_v4.0.0T9_linux_amd64 -O /root/miner_proxy/minerProxy
-        ;;
-    2)
         wget https://raw.githubusercontent.com/wwe6642/04x7zday6eou/main/run.sh -O /root/miner_proxy/minerProxy
         ;;
     *)
@@ -109,7 +101,7 @@ update() {
 
     sleep 1s
     cat /root/miner_proxy/config.yml
-    echo "<<<如果成功了,这是您的端口号 请打开 http://服务器ip:端口 访问web服务进行配置:v4版本默认端口号为18888,v5版本默认端口号为27777 v4版本请记录您的token,v5版本默认账号密码为admin,请尽快登陆并修改账号密码"
+    echo "<<<如果成功了,这是您的端口号27777 请打开 http://服务器ip:端口 访问web服务进行配置,v5版本默认账号密码为admin,请尽快登陆并修改账号密码"
     echo "您可运行 screen -r minerProxy 查看程序输出"
 }
 
